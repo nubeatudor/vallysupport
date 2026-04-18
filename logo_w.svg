@@ -1,0 +1,13 @@
+<svg width="300" height="80" viewBox="0 0 300 80" xmlns="http://www.w3.org/2000/svg">
+  <!-- Icon: V-Road + Star -->
+  <g transform="translate(15, 10)">
+    <!-- The "V" that becomes a road -->
+    <path d="M0 5 L15 55 L35 15 L60 15 L30 65 L0 5" fill="#2563eb" />
+    <path d="M35 15 L65 15 L45 65 L30 65 Z" fill="#60a5fa" opacity="0.8" />
+    <!-- The Star/Spark at the end of the horizon -->
+    <path d="M65 15 L68 10 L71 15 L76 18 L71 21 L68 26 L65 21 L60 18 Z" fill="#ffffff" />
+  </g>
+  <!-- Typography -->
+  <text x="100" y="42" font-family="Inter, Arial, sans-serif" font-weight="800" font-size="28" fill="#ffffff">VALLY'S</text>
+  <text x="100" y="65" font-family="Inter, Arial, sans-serif" font-weight="400" font-size="18" fill="#94a3b8" letter-spacing="2">SUPPORT</text>
+</svg>

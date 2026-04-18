@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Vally’s Support – Compliance & Cost-Cutting Solutions for Trucking Fleets</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Vally’s Support helps trucking companies slash costs, stay compliant, and protect margins through tailored back-office and regulatory services.">
+  <link rel="stylesheet" href="./assets/css/stil.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- ▸ NAVBAR ------------------------------------------------------------ -->
+  <header id="siteHeader">
+    <nav class="nav">
+      <a href="#hero" class="logo"><img src="./assets/img/logo.jpeg" alt="Vally’s Support logo"></a>
+      <ul class="nav-list">
+        <li><a href="#solution">Solution</a></li>
+        <li><a href="#packages">Packages</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#lead" class="btn-primary">Request a Quote</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ▸ HERO -------------------------------------------------------------- -->
+  <section id="hero">
+    <canvas id="heroCanvas" aria-hidden="true"></canvas>
+    <h1>Reduce Fleet Costs & Stay Compliant</h1>
+    <p>Outsource the paperwork, regulatory headaches, and profit-draining inefficiencies.  
+       Vally’s Support keeps your trucks moving—and your margins healthy.</p>
+    <a href="#lead" class="btn-primary hero-cta">Request a Quote</a>
+  </section>
+
+  <!-- ▸ PAIN POINTS ------------------------------------------------------- -->
+  <section id="pain" class="section">
+    <h2>The Hidden Killers of Profit</h2>
+    <ul class="text-lg disc">
+      <li>Fines and downtime from FMCSA compliance gaps</li>
+      <li>Unplanned maintenance spirals hurting cash flow</li>
+      <li>Manual bookkeeping wasting precious driver hours</li>
+      <li>Difficulty scaling operations without ballooning overhead</li>
+    </ul>
+  </section>
+
+  <!-- ▸ Solution snapshot -->
+  <section id="solution" class="section grid-2">
+    <div>
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&modestbranding=1&enablejsapi=1"
+              title="How Vally’s Support Works" loading="lazy"
+              allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div>
+      <h2>One Partner, All the Back-Office Power You Need</h2>
+      <ul>
+        <li>Real-time compliance monitoring &amp; documentation</li>
+        <li>Predictive maintenance scheduling and vendor management</li>
+        <li>Bulk-rate fuel card optimisation</li>
+        <li>Dedicated account specialist—no call-centre queues</li>
+      </ul>
+      <a href="#packages" class="btn-primary">See Packages</a>
+    </div>
+  </section>
+
+  <!-- ▸ Testimonials -->
+  <section id="proof" class="section">
+    <h2>Companies That Trust Vally’s Support</h2>
+    <div id="carousel">
+      <blockquote class="card"><p>“Our DOT audit passed with zero violations. Saved us over $25 k in potential fines.”</p><footer>— Linda M., 45-truck fleet</footer></blockquote>
+      <blockquote class="card"><p>“We trimmed 9 ¢ per mile after the fuel optimisation program.”</p><footer>— Carlos R., Operations Mgr</footer></blockquote>
+      <blockquote class="card"><p>“Maintenance downtime dropped by 31 %. Drivers are thrilled.”</p><footer>— Ethan T., Safety Director</footer></blockquote>
+    </div>
+  </section>
+
+  <!-- ▸ Packages -->
+  <section id="packages" class="section">
+    <h2>Flexible Packages for Any Fleet Size</h2>
+    <div class="cards">
+      <article class="card"><h3>Starter</h3><p>Up to 25 trucks</p><ul><li>Compliance portal</li><li>Quarterly maintenance plan</li><li>Email support</li></ul><p><strong>$499/mo</strong></p></article>
+      <article class="card highlight"><h3>Collab</h3><p>26–50 trucks</p><ul><li>Everything in Starter</li><li>Fuel card optimisation</li><li>Dedicated account specialist</li></ul><p><strong>$699/mo</strong></p></article>
+      <article class="card highlight"><h3>Growth</h3><p>51–100 trucks</p><ul><li>Everything in Starter</li><li>Fuel card optimisation</li><li>Dedicated account specialist</li></ul><p><strong>$1 099/mo</strong></p></article>
+      <article class="card"><h3>Business</h3><p>101–150 trucks</p><ul><li>Full compliance management</li><li>24/7 phone support</li><li>Custom KPI dashboard</li></ul><p><strong>$1 299/mo</strong></p></article>
+      <article class="card"><h3>Enterprise</h3><p>150+ trucks</p><ul><li>Full compliance management</li><li>24/7 phone support</li><li>Custom KPI dashboard</li></ul><p><strong>Custom Quote</strong></p></article>
+    </div>
+  </section>
+
+  <!-- ▸ Process -->
+  <section id="process" class="section">
+    <h2>Three Simple Steps to Safer, Cheaper Hauls</h2>
+    <ol>
+      <li class="card"><h3>Discovery Call</h3><p>We assess your fleet’s pain points, goals and data.</p></li>
+      <li class="card"><h3>Custom Roadmap</h3><p>You receive a detailed action plan with clear milestones.</p></li>
+      <li class="card"><h3>Ongoing Optimisation</h3><p>We execute, monitor and refine—while you focus on hauling.</p></li>
+    </ol>
+  </section>
+
+  <!-- ▸ Lead form -->
+  <section id="lead" class="section">
+    <form id="leadForm" action="send_email.php" method="post" novalidate>
+      <h2>Request Your Quote</h2>
+      <label>Name<input type="text" name="name" required></label>
+      <label>Company<input type="text" name="company" required></label>
+      <label>Fleet Size<input type="number" name="fleet" min="1" required></label>
+      <label>Phone<input type="tel" name="phone" required></label>
+      <label>Email<input type="email" name="email" required></label>
+      <label>Main Pain Point<select name="pain">
+        <option value="compliance">Compliance</option>
+        <option value="maintenance">Maintenance</option>
+        <option value="costs">Rising Costs</option>
+      </select></label>
+      <label class="consent">
+        <input type="checkbox" name="consent" required>
+        <span>I agree that Vally’s Support may contact me by phone, e-mail or text message about the services I have requested. I understand that my data will be processed and stored in accordance with the <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a> and applicable data-protection laws (including the EU GDPR, the U.S. CAN-SPAM Act and, where relevant, the TCPA). I can withdraw my consent at any time.</span>
+      </label>
+      <button class="btn-primary" type="submit">Submit</button>
+      <p id="formMsg" role="alert"></p>
+    </form>
+  </section>
+
+  <!-- ▸ About -->
+  <section id="about" class="section grid-2">
+    <div><img src="./assets/img/founder.jpg" alt="Founder portrait" class="avatar"></div>
+    <div>
+      <h2>About Vally’s Support</h2>
+      <p>Founded by former dispatch manager Valentin Lapp, our mission is to help small and mid-sized carriers compete with the biggest names in logistics—without drowning in paperwork or unpredictable costs.</p>
+      <p>Headquartered in Chișinău and serving carriers across the United States.</p>
+    </div>
+  </section>
+
+  <!-- ▸ FAQ -->
+  <section id="faq" class="section">
+    <h2>Frequently Asked Questions</h2>
+    <details><summary>Do you work with fleets under 10 trucks?</summary><p>Yes—our Starter package scales down to as few as three power units.</p></details>
+    <details><summary>Is there a contract commitment?</summary><p>Month-to-month; cancel any time with 30 days’ notice.</p></details>
+    <details><summary>What regions do you cover?</summary><p>We currently support carriers operating in the continental U.S. market.</p></details>
+  </section>
+
+  <!-- ▸ Footer -->
+  <footer id="footer" class="section footer">
+    <p>© 2025 Vally’s Afterhours Support Co. · Chișinău, MD · Tel <a href="tel:+37369505850">+373 69 505 850</a> · <a href="mailto:info@vallysupport.com">info@vallysupport.com</a></p>
+    <p><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a></p>
+  </footer>
+
+  <script src="./assets/js/scripts.js" defer></script>
+</body>
+</html>

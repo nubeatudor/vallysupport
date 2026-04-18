@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Vally’s Afterhours Support | Elite Trucking Dispatch & Compliance</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Elite afterhours support for US trucking fleets. 10-minute response time for broker updates.">
+        
+        <!-- Favicon -->
+        <link rel="icon" href="./assets/img/logo_w_sign.svg">
+        
+        <!-- CSS -->
+        <link rel="stylesheet" href="./assets/css/styles.css">
+        
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+        
+        <!-- Tailwind -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        
+        <style>
+            /* Smooth transition for navbar text color */
+            .nav-link {
+                transition: color 0.4s ease;
+            }
+        </style>
+    </head>
+    <body class="bg-slate-50 font-['Inter'] antialiased text-slate-900">
+    
+        <!-- Privacy Consent Modal -->
+        <div id="vs-consent" class="fixed inset-0 z-[9999] hidden items-center justify-center bg-slate-900/80 backdrop-blur-sm px-4">
+            <div class="bg-white rounded-3xl p-8 max-w-lg shadow-2xl">
+                <h3 class="text-xl font-bold mb-2">Your Privacy & Terms</h3>
+                <p class="text-slate-600 text-sm mb-6">We use cookies to improve your experience.</p>
+                <div class="space-y-3 mb-8">
+                    <label class="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100">
+                        <input type="checkbox" checked disabled class="w-5 h-5 rounded text-blue-600">
+                        <span class="text-sm font-medium">Strictly Necessary Cookies</span>
+                    </label>
+                    <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-100 cursor-pointer hover:bg-slate-50">
+                        <input type="checkbox" id="vs-ck-analytics" class="w-5 h-5 rounded text-blue-600">
+                        <span class="text-sm font-medium">Analytics (Optional)</span>
+                    </label>
+                    <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-100 cursor-pointer hover:bg-slate-50">
+                        <input type="checkbox" id="vs-ck-terms" class="w-5 h-5 rounded text-blue-600">
+                        <span class="text-sm font-medium">Agree to <a href="terms.html" class="text-blue-600 underline">Terms</a> & <a href="privacy.html" class="text-blue-600 underline">Privacy</a></span>
+                    </label>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <button id="vs-accept-all" class="w-full py-3 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-500 transition-colors">Accept All</button>
+                    <button id="vs-save" class="w-full py-3 border border-slate-200 text-slate-600 font-bold rounded-xl" disabled>Save Choices</button>
+                    <a href="#" id="vs-consent-close" class="text-center text-slate-400 text-sm hover:text-slate-600 mt-2">Close</a>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Header -->
+        <header id="siteHeader" class="fixed top-0 w-full z-50 transition-all duration-300 py-6">
+            <nav class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+                <a href="#" class="flex items-center">
+                    <!-- v=10 forces the browser to load the newest Concept 3 logo -->
+                    <img src="./assets/img/logo_w.svg" alt="Vally's Support" class="h-10 md:h-12 w-auto">
+                </a>
+                <ul class="hidden md:flex items-center gap-10 text-sm font-bold tracking-tight">
+                    <li><a href="#solution" class="nav-link text-slate-300 hover:text-white">Solution</a></li>
+                    <li><a href="#packages" class="nav-link text-slate-300 hover:text-white">Packages</a></li>
+                    <li><a href="#about" class="nav-link text-slate-300 hover:text-white">About</a></li>
+                    <li>
+                        <a href="#lead" class="bg-blue-600 text-white px-7 py-3 rounded-full font-bold hover:bg-blue-500 transition-all shadow-lg shadow-blue-600/20">
+                            Request Quote
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    
+        <main>
+        <!-- HERO SECTION -->
+        <section id="hero" class="relative min-h-screen flex items-center pt-20 bg-slate-900 overflow-hidden">
+            <canvas id="heroCanvas" class="absolute inset-0 pointer-events-none"></canvas>
+            <div class="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-left">
+                    <h1 class="text-5xl lg:text-7xl font-extrabold text-white leading-tight mb-6">
+                        Your Office Closes. <span class="text-blue-500">Our Work Begins.</span>
+                    </h1>
+                    <p class="text-xl text-slate-400 max-w-xl mb-8">
+                        Elite afterhours support for US fleets. We protect your scorecard while you sleep.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#lead" class="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-xl font-bold text-lg text-center transition-all shadow-xl shadow-blue-600/30">Get a Free Quote</a>
+                        <a href="#packages" class="bg-slate-800 hover:bg-slate-700 text-white px-8 py-4 rounded-xl font-bold text-lg text-center border border-slate-700 transition-all">View Pricing</a>
+                    </div>
+                </div>
+                <div class="hidden lg:block relative group">
+                    <img src="./assets/img/bannerFoto.png" alt="Banner" class="rounded-3xl shadow-2xl transition-all duration-700 group-hover:scale-[1.01] border border-slate-800 bg-slate-800/50">
+                </div>
+            </div>
+        </section>
+
+        <!-- PAIN AMPLIFICATION -->
+        <section id="pain" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-4xl font-extrabold mb-4 text-slate-900">Where Afterhours Eats Your Margin</h2>
+                    <p class="text-slate-600 text-lg">Trucking doesn't stop at 5 PM. When your office closes, the risks and costs start to climb.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 flex items-start gap-4 hover:shadow-md transition-all">
+                        <div class="w-10 h-10 bg-red-100 text-red-600 rounded-lg flex-shrink-0 flex items-center justify-center font-bold">!</div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Missed Broker Updates</h3>
+                            <p class="text-slate-600 text-sm">Missed status pings lead to fines, scorecard hits, and permanent rate pressure.</p>
+                        </div>
+                    </div>
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 flex items-start gap-4 hover:shadow-md transition-all">
+                        <div class="w-10 h-10 bg-red-100 text-red-600 rounded-lg flex-shrink-0 flex items-center justify-center font-bold">!</div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Night-time Cancellations</h3>
+                            <p class="text-slate-600 text-sm">Empty miles and lost revenue when you can't book a recovery load at 3 AM.</p>
+                        </div>
+                    </div>
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 flex items-start gap-4 hover:shadow-md transition-all">
+                        <div class="w-10 h-10 bg-red-100 text-red-600 rounded-lg flex-shrink-0 flex items-center justify-center font-bold">!</div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Uncoordinated Breakdowns</h3>
+                            <p class="text-slate-600 text-sm">Hours lost and inflated vendor costs due to lack of coordination in the dead of night.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOLUTION SNAPSHOT -->
+        <section id="solution" class="py-24 bg-slate-900 text-white overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <img src="./assets/img/pains.png" alt="Fleet Management" class="rounded-3xl shadow-2xl relative z-10 border border-slate-800" onerror="this.src='https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1000'">
+                    <div class="absolute -bottom-6 -left-6 w-48 h-48 bg-blue-600/20 rounded-3xl blur-3xl -z-0"></div>
+                </div>
+                <div>
+                    <!-- Added text-white for readability -->
+                    <h2 class="text-4xl font-extrabold mb-8 text-white">All the Back-Office Power You Need</h2>
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="w-8 h-8 bg-blue-600/20 text-blue-500 rounded flex-shrink-0 flex items-center justify-center">✓</div>
+                            <p class="text-slate-300"><span class="text-white font-bold block mb-1">Compliance & Documentation</span> Real-time monitoring of driver logs and status to keep you audit-ready.</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-8 h-8 bg-blue-600/20 text-blue-500 rounded flex-shrink-0 flex items-center justify-center">✓</div>
+                            <p class="text-slate-300"><span class="text-white font-bold block mb-1">Vendor Management</span> Predictive maintenance scheduling and rapid vendor outreach during breakdowns.</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-8 h-8 bg-blue-600/20 text-blue-500 rounded flex-shrink-0 flex items-center justify-center">✓</div>
+                            <p class="text-slate-300"><span class="text-white font-bold block mb-1">Dedicated Specialists</span> No call-center queues. A dedicated account specialist who knows your lanes and drivers.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FLEXIBLE PACKAGES -->
+        <section id="packages" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-extrabold text-slate-900 mb-4">Pricing for Every Fleet</h2>
+                    <p class="text-slate-600 max-w-2xl mx-auto">Scale your support as your business grows. No hidden fees, just pure afterhours power.</p>
+                </div>
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <!-- Starter -->
+                    <div class="bg-slate-50 p-10 rounded-3xl border border-slate-100 flex flex-col hover:shadow-xl transition-all">
+                        <h3 class="text-2xl font-bold mb-1">Starter</h3>
+                        <p class="text-sm text-slate-500 mb-6 font-medium uppercase tracking-wider">Up to 25 trucks</p>
+                        <div class="text-5xl font-extrabold mb-8 text-slate-900">$700<span class="text-lg font-normal text-slate-400">/mo</span></div>
+                        <ul class="space-y-4 mb-10 flex-grow text-slate-600 text-sm">
+                            <li class="flex gap-2"><span>✓</span> Broker ETA/Status Updates</li>
+                            <li class="flex gap-2"><span>✓</span> PO & Directions Assistance</li>
+                            <li class="flex gap-2"><span>✓</span> Lumper Payment Support</li>
+                            <li class="flex gap-2"><span>✓</span> Driver/Broker Coordination</li>
+                        </ul>
+                        <a href="#lead" class="w-full py-4 bg-slate-900 text-white rounded-xl font-bold text-center hover:bg-blue-600 transition-colors">Choose Starter</a>
+                    </div>
+                    <!-- Collab -->
+                    <div class="bg-blue-600 p-10 rounded-3xl border border-blue-400 flex flex-col scale-105 shadow-2xl relative z-10 text-white">
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-white text-blue-600 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Most Popular</div>
+                        <h3 class="text-2xl font-bold mb-1 text-white">Collab</h3>
+                        <p class="text-sm text-blue-100 mb-6 font-medium uppercase tracking-wider">26 – 50 trucks</p>
+                        <div class="text-5xl font-extrabold mb-8">$1,200<span class="text-lg font-normal text-blue-200">/mo</span></div>
+                        <ul class="space-y-4 mb-10 flex-grow text-blue-50 text-sm">
+                            <li class="flex gap-2"><span>✓</span> Everything in Starter</li>
+                            <li class="flex gap-2"><span>✓</span> Roadside Emergency Handling</li>
+                            <li class="flex gap-2"><span>✓</span> Advanced Driver Resolution</li>
+                            <li class="flex gap-2"><span>✓</span> Priority Dispatch Monitoring</li>
+                        </ul>
+                        <a href="#lead" class="w-full py-4 bg-white text-blue-600 rounded-xl font-bold text-center hover:bg-slate-100 transition-colors shadow-lg">Choose Collab</a>
+                    </div>
+                    <!-- Growth/Enterprise -->
+                    <div class="bg-slate-50 p-10 rounded-3xl border border-slate-100 flex flex-col hover:shadow-xl transition-all">
+                        <h3 class="text-2xl font-bold mb-1">Enterprise</h3>
+                        <p class="text-sm text-slate-500 mb-6 font-medium uppercase tracking-wider">51+ trucks</p>
+                        <div class="text-5xl font-extrabold mb-8 text-slate-900">Custom<span class="text-lg font-normal text-slate-400"> Quote</span></div>
+                        <ul class="space-y-4 mb-10 flex-grow text-slate-600 text-sm">
+                            <li class="flex gap-2"><span>✓</span> Full Breakdown Support</li>
+                            <li class="flex gap-2"><span>✓</span> Cancellation Recovery Booking</li>
+                            <li class="flex gap-2"><span>✓</span> Dedicated Shift Manager</li>
+                            <li class="flex gap-2"><span>✓</span> Custom SOP Integration</li>
+                        </ul>
+                        <a href="#lead" class="w-full py-4 bg-slate-900 text-white rounded-xl font-bold text-center hover:bg-blue-600 transition-colors">Talk to Sales</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROCESS SECTION -->
+        <section id="process" class="py-24 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-4xl font-extrabold text-center mb-16 text-slate-900">Four Simple Steps to Peace of Mind</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="relative text-center">
+                        <div class="w-16 h-16 bg-blue-600 text-white rounded-2xl flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg shadow-blue-600/20">1</div>
+                        <h3 class="font-bold text-xl mb-2">Quick Call</h3>
+                        <p class="text-slate-500 text-sm">Tell us about your fleet size and typical afterhours pain points.</p>
+                    </div>
+                    <div class="relative text-center">
+                        <div class="w-16 h-16 bg-blue-600 text-white rounded-2xl flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg shadow-blue-600/20">2</div>
+                        <h3 class="font-bold text-xl mb-2">Custom Plan</h3>
+                        <p class="text-slate-500 text-sm">We match your operations with a tailored support runbook.</p>
+                    </div>
+                    <div class="relative text-center">
+                        <div class="w-16 h-16 bg-blue-600 text-white rounded-2xl flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg shadow-blue-600/20">3</div>
+                        <h3 class="font-bold text-xl mb-2">Go Live</h3>
+                        <p class="text-slate-500 text-sm">Our team integrates with your TMS/loadboards and starts hauls.</p>
+                    </div>
+                    <div class="relative text-center">
+                        <div class="w-16 h-16 bg-blue-600 text-white rounded-2xl flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg shadow-blue-600/20">4</div>
+                        <h3 class="font-bold text-xl mb-2">Optimization</h3>
+                        <p class="text-slate-500 text-sm">Monthly check-ins to refine SOPs and resolve recurring issues.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+                <div class="relative group">
+                    <img src="./assets/img/founder.png" alt="Valentin Lapp" class="rounded-3xl shadow-2xl relative z-10 border border-slate-100 group-hover:scale-[1.01] transition-all duration-500" onerror="this.src='https://via.placeholder.com/600x600?text=Valentin+Lapp'">
+                    <div class="absolute -bottom-6 -right-6 w-full h-full border-4 border-blue-600 rounded-3xl -z-0 translate-x-3 translate-y-3 opacity-20"></div>
+                </div>
+                <div>
+                    <h2 class="text-4xl font-extrabold mb-6 text-slate-900">It’s Personal for Us.</h2>
+                    <p class="text-lg text-slate-600 mb-8 leading-relaxed italic">
+                        "I’ve been in the trucking industry for a while. I saw that office work ended at 5 PM, but the problems didn't. Trucks roll 24/7, and drivers deserve support at 2 AM just as much as they do at 2 PM. I started Vally's Support to give owners their nights back."
+                    </p>
+                    <p class="text-xl font-extrabold text-slate-900 uppercase tracking-widest">— Valentin Lapp, Founder</p>
+                    <p class="text-blue-600 font-bold mt-1">Headquartered in Chișinău • Serving the USA</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ SECTION -->
+        <section id="faq" class="py-24 bg-white border-t border-slate-100">
+            <div class="max-w-4xl mx-auto px-6">
+                <h2 class="text-4xl font-extrabold text-center mb-16 text-slate-900">Common Questions</h2>
+                <div class="space-y-4">
+                    <details class="group p-6 rounded-2xl bg-slate-50 border border-slate-100 cursor-pointer">
+                        <summary class="font-bold text-lg list-none flex justify-between items-center">
+                            What regions do you cover?
+                            <span class="text-blue-600 transition-transform group-open:rotate-180">↓</span>
+                        </summary>
+                        <p class="text-slate-600 mt-4 text-sm leading-relaxed">We currently support carriers operating across the continental U.S. market, providing seamless coverage for all time zones during afterhours.</p>
+                    </details>
+                    <details class="group p-6 rounded-2xl bg-slate-50 border border-slate-100 cursor-pointer">
+                        <summary class="font-bold text-lg list-none flex justify-between items-center">
+                            How fast do you respond?
+                            <span class="text-blue-600 transition-transform group-open:rotate-180">↓</span>
+                        </summary>
+                        <p class="text-slate-600 mt-4 text-sm leading-relaxed">We target an initial response within 5 minutes during Afterhours via phone or email. Our goal is to resolve inquiries before they impact the load.</p>
+                    </details>
+                    <details class="group p-6 rounded-2xl bg-slate-50 border border-slate-100 cursor-pointer">
+                        <summary class="font-bold text-lg list-none flex justify-between items-center">
+                            Do you provide breakdown support?
+                            <span class="text-blue-600 transition-transform group-open:rotate-180">↓</span>
+                        </summary>
+                        <p class="text-slate-600 mt-4 text-sm leading-relaxed">Yes. We coordinate vendor outreach and approvals for trucks and trailers, following your spend limits and escalation tree to get your drivers back on the road.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- LEAD FORM SECTION -->
+        <section id="lead" class="py-24 bg-slate-900 relative overflow-hidden">
+            <div class="absolute inset-0 bg-blue-600/5 blur-3xl pointer-events-none"></div>
+            <div class="max-w-3xl mx-auto px-6 relative z-10">
+                <div class="bg-white rounded-[2rem] p-10 md:p-16 shadow-2xl border border-white/10">
+                    <form action="send_email.php" method="POST" id="leadForm" class="space-y-6">
+                        <div class="text-center mb-10">
+                            <h2 class="text-4xl font-extrabold text-slate-900 mb-2">Request Your Quote</h2>
+                            <p class="text-slate-500">Protect your margins with 24/7 reliability.</p>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <input type="text" name="name" placeholder="Full Name" required class="w-full px-5 py-4 rounded-2xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+                            <input type="text" name="company" placeholder="Company Name" required class="w-full px-5 py-4 rounded-2xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <input type="email" name="email" placeholder="Email Address" required class="w-full px-5 py-4 rounded-2xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+                            <input type="tel" name="phone" placeholder="Phone Number" required class="w-full px-5 py-4 rounded-2xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+                        </div>
+                        <input type="number" name="fleet" placeholder="Fleet Size (Number of Trucks)" required class="w-full px-5 py-4 rounded-2xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+                        <select name="pain" class="w-full px-5 py-4 rounded-2xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none bg-white">
+                            <option value="compliance">Compliance & Fines</option>
+                            <option value="support">Afterhours Dispatch</option>
+                            <option value="breakdowns">Roadside Coordination</option>
+                            <option value="costs">Cost Reduction</option>
+                        </select>
+                        <div class="flex items-start gap-3 p-4 bg-slate-50 rounded-2xl">
+                            <input type="checkbox" name="consent" id="form-consent" required class="w-5 h-5 mt-1 border-slate-300 text-blue-600 focus:ring-blue-500">
+                            <label for="form-consent" class="text-xs text-slate-500 leading-relaxed">I agree that Vally’s Support may contact me regarding services. See our <a href="privacy.html" class="text-blue-600 underline font-bold">Privacy Policy</a>.</label>
+                        </div>
+                        <button type="submit" class="w-full py-5 bg-blue-600 text-white font-extrabold rounded-2xl text-xl shadow-xl shadow-blue-600/30 hover:bg-blue-500 transition-all">Send Quote Request</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer" class="bg-slate-900 text-slate-500 py-20 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12 text-center md:text-left">
+            <div>
+                <div class="text-white font-bold text-xl mb-4 tracking-tighter uppercase">Vally's Support</div>
+                <p class="text-sm leading-relaxed max-w-xs mx-auto md:mx-0">Professional afterhours back-office power for the US trucking industry.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-widest">Legal & Compliance</h4>
+                <ul class="text-sm space-y-3">
+                    <li><a href="privacy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                    <li><a href="terms.html" class="hover:text-white transition-colors">Terms of Service</a></li>
+                    <li><a href="dpa.html" class="hover:text-white transition-colors">Data Processing Addendum</a></li>
+                    <li><a href="cookies.html" class="hover:text-white transition-colors">Cookie Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-widest">Contact Information</h4>
+                <p class="text-sm">info@vallysupport.com</p>
+                <p class="text-sm">+1 312-620-8806</p>
+                <p class="text-sm mt-4 text-slate-600">Chișinău, MD • Serving USA Market</p>
+            </div>
+        </div>
+        <!-- Opacity increased to 80 for better visibility -->
+        <div class="text-center mt-20 pt-8 border-t border-slate-800 text-[10px] uppercase tracking-widest opacity-80">
+            © <span id="year"></span> Vally’s Afterhours Support Co. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Updated path to assets/js/scripts.js -->
+    <script src="./assets/js/scripts.js" defer></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
